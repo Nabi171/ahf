@@ -1,10 +1,10 @@
 const myPromise = new Promise((resolve, reject) => {
-    const user = null;
+    const user = { id: 1 };
     if (!user) {
         reject("something went wrong!");
     } else {
         setTimeout(() => {
-            resolve("successfully git hte data")
+            resolve("successfully got the data")
         }, 1000)
     }
 
@@ -13,3 +13,8 @@ const myPromise = new Promise((resolve, reject) => {
 
 
 });
+
+myPromise.then(res => console.log(res))
+    .catch(err => console.log(err));
+
+console.log("done");
