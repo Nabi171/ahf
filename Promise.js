@@ -23,6 +23,7 @@ for (let i = 0; i < userIds.length; i++) {
 
 Promise.all(userData).then(res => {
     console.log(res);
+
 })
 console.log(userData);
 
