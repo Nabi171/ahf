@@ -1,7 +1,11 @@
 async function getData() {
     try {
         undefined.find();
-    } catch (error) {
+
+        const emailError = new Error("Email already exists");
+        throw emailError;
+    }
+    catch (error) {
         errHandler(error);
     }
 
@@ -10,14 +14,15 @@ getData();
 
 function errHandler(error) {
     const { name, nessage, stack } = error;
-    logger.error(
-        {
-            name,
-            message,
-            stack,
-        }
+    console.log(name, message);
+    // logger.error(
+    //     {
+    //         name,
+    //         message,
+    //         stack,
+    //     }
 
-    );
-    console.log("internal server error");
+    // );
+    // console.log("internal server error");
 }
 console.log("Done!");
