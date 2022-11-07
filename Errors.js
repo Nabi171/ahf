@@ -1,28 +1,16 @@
+const { errorHandler, two } = require("./errorHandler.js");
+two();
 async function getData() {
     try {
-        undefined.find();
+        // undefined.find();
 
         const emailError = new Error("Email already exists");
         throw emailError;
     }
     catch (error) {
-        errHandler(error);
+        errorHandler(error);
     }
 
 }
 getData();
 
-function errHandler(error) {
-    const { name, nessage, stack } = error;
-    console.log(name, message);
-    // logger.error(
-    //     {
-    //         name,
-    //         message,
-    //         stack,
-    //     }
-
-    // );
-    // console.log("internal server error");
-}
-console.log("Done!");
